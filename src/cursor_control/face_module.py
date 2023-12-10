@@ -9,3 +9,13 @@ def process_face(frame, face_mesh):
     landmark_points = output.multi_face_landmarks
     return landmark_points, frame_w, frame_h
 
+# Fnction to draw landmarks on the input frame.
+def draw_landmarks(frame, landmarks, frame_w, frame_h):
+    for id, landmark in enumerate(landmarks[474:478]):
+        x = int(landmark.x * frame_w)
+        y = int(landmark.y * frame_h)
+        cv2.circle(frame, (x, y), 3, (0, 255, 0))
+
+# Function to draw a curser on the input frame using specified coordinates
+def move_cursor(frame, x, y):
+    cv2.circle(frame, (x, y), 3, (0, 255, 0))
