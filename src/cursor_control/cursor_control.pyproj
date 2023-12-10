@@ -25,6 +25,7 @@
     <Compile Include="control_module.py" />
     <Compile Include="face_module.py" />
     <Compile Include="main.py" />
+    <Compile Include="model\knn.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
