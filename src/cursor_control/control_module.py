@@ -17,3 +17,8 @@ def process_blink_action(frame, landmarks, action, threshold, frame_w, frame_h):
 def double_click():
     pyautogui.doubleClick()
     pyautogui.sleep(0.2)
+
+    # Function to process right click
+    def right_click():
+    pyautogui.rightClick()
+    pyautogui.sleep(0.2)

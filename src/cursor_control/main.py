@@ -38,7 +38,24 @@ def main():
 
                 left = [landmarks[153], landmarks[158]]
                 process_blink_action(frame, left, double_click, 0.006, frame_w, frame_h)
+                #Processing Right eye movement
+                right = [landmarks[380], landmarks[385]]
+                process_blink_action(frame, right, right_click, 0.004, frame_w, frame_h)
+                
+                # Processing Mouth landmarks
+                mouth = [landmarks[15], landmarks[13]]
+                if mouth[0].y - mouth[1].y > 0.08:
+                    count = False
+                    print("a")
+                    pyautogui.sleep(0.2)
+                    time.sleep(2)
 
+        else:
+            # Handle the case when count is False
+            cv2.imshow('Eye Control cursor', frame)
+
+        if cv2.waitKey(1) & 0xFF == 27:
+            break
 
     release_camera(cam)
     cv2.destroyAllWindows()
