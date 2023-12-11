@@ -19,6 +19,10 @@ def double_click():
     pyautogui.sleep(0.2)
 
     # Function to process right click
-    def right_click():
+def right_click():
     pyautogui.rightClick()
     pyautogui.sleep(0.2)
+
+
+def move_cursor_to(x, y):
+    pyautogui.moveTo(x, y)
